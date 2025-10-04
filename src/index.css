@@ -1,0 +1,143 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* SOC Dashboard Design System - Cybersecurity Theme
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* SOC Dark Theme Colors */
+    --background: 217 19% 7%;
+    --foreground: 210 40% 98%;
+
+    --card: 217 19% 9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 217 19% 9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 158 64% 52%;
+    --primary-foreground: 217 19% 7%;
+
+    --secondary: 217 19% 12%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 19% 12%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 195 100% 50%;
+    --accent-foreground: 217 19% 7%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 19% 15%;
+    --input: 217 19% 12%;
+    --ring: 158 64% 52%;
+
+    --radius: 0.75rem;
+
+    /* SOC Specific Colors */
+    --neon-green: 158 64% 52%;
+    --neon-blue: 195 100% 50%;
+    --cyber-orange: 39 100% 50%;
+    --warning-yellow: 45 93% 47%;
+    
+    /* Alert Severity Colors */
+    --severity-critical: 0 84% 60%;
+    --severity-high: 14 100% 57%;
+    --severity-medium: 39 100% 50%;
+    --severity-low: 45 93% 47%;
+    --severity-info: 195 100% 50%;
+
+    /* Sidebar Colors */
+    --sidebar-background: 217 19% 6%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 158 64% 52%;
+    --sidebar-primary-foreground: 217 19% 7%;
+    --sidebar-accent: 217 19% 10%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 217 19% 12%;
+    --sidebar-ring: 158 64% 52%;
+
+    /* Gradients */
+    --gradient-cyber: linear-gradient(135deg, hsl(var(--neon-green) / 0.1), hsl(var(--neon-blue) / 0.1));
+    --gradient-alert: linear-gradient(135deg, hsl(var(--severity-critical) / 0.1), hsl(var(--severity-high) / 0.1));
+    --gradient-card: linear-gradient(135deg, hsl(var(--card)), hsl(var(--secondary)));
+    
+    /* Shadows */
+    --shadow-neon-green: 0 0 20px hsl(var(--neon-green) / 0.3);
+    --shadow-neon-blue: 0 0 20px hsl(var(--neon-blue) / 0.3);
+    --shadow-card: 0 8px 32px hsl(217 19% 4% / 0.4);
+    --shadow-alert: 0 4px 16px hsl(var(--severity-critical) / 0.2);
+
+    /* Transitions */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-fast: all 0.15s ease-out;
+  }
+
+  /* Override for light mode to force dark theme */
+  .light {
+    --background: 217 19% 7%;
+    --foreground: 210 40% 98%;
+    --card: 217 19% 9%;
+    --card-foreground: 210 40% 98%;
+    --popover: 217 19% 9%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 158 64% 52%;
+    --primary-foreground: 217 19% 7%;
+    --secondary: 217 19% 12%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 19% 12%;
+    --muted-foreground: 215 20.2% 65.1%;
+    --accent: 195 100% 50%;
+    --accent-foreground: 217 19% 7%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 217 19% 15%;
+    --input: 217 19% 12%;
+    --ring: 158 64% 52%;
+  }
+}
+
+/* Custom animations for SOC dashboard */
+@keyframes pulse-neon {
+  0%, 100% {
+    box-shadow: 0 0 5px hsl(var(--neon-green) / 0.5);
+  }
+  50% {
+    box-shadow: 0 0 20px hsl(var(--neon-green) / 0.8);
+  }
+}
+
+@keyframes slide-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 5px hsl(var(--neon-blue) / 0.3);
+  }
+  50% {
+    box-shadow: 0 0 15px hsl(var(--neon-blue) / 0.6);
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+  }
+}
